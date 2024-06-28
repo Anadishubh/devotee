@@ -2,6 +2,7 @@ import 'package:devotee_matrimony/constants/button_constant.dart';
 import 'package:devotee_matrimony/constants/color_constant.dart';
 import 'package:devotee_matrimony/constants/font_constant.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -29,45 +30,48 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(
-                bottom: screenHeight * 0.6, left: screenWidth * 0.1),
+            margin: EdgeInsets.only(bottom: screenHeight * 0.59),
             decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/images/bg1.png'),
-                    fit: BoxFit.contain)),
+              image: DecorationImage(
+                  image: AssetImage('assets/images/bg1.png'),
+                  fit: BoxFit.contain),
+            ),
           ),
           Container(
-            margin: EdgeInsets.only(
-                top: screenHeight * 0.62, left: screenWidth * 0.2),
+            margin: EdgeInsets.only(top: screenHeight * 0.51),
             decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/images/bg2.png'),
-                    fit: BoxFit.contain)),
-          ),
-          Container(
-            margin: EdgeInsets.only(bottom: screenHeight * 0.05),
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/images/purple.png'),scale: 1.25)),
+              image: DecorationImage(
+                  image: AssetImage('assets/images/bg2.png'),
+                  fit: BoxFit.contain),
+            ),
           ),
           Container(
             margin: EdgeInsets.only(bottom: screenHeight * 0.05),
             decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/images/white.png'),scale: 1.25)),
+              image: DecorationImage(
+                  image: AssetImage('assets/images/purple.png'), scale: 1.25),
+            ),
           ),
           Container(
             margin: EdgeInsets.only(bottom: screenHeight * 0.05),
             decoration: const BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage('assets/images/wedding.png'),scale: 1.2
-            )),
+              image: DecorationImage(
+                  image: AssetImage('assets/images/white.png'), scale: 1.25),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(bottom: screenHeight * 0.05),
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/images/wedding.png'), scale: 1.2),
+            ),
           ),
           Container(
             margin: EdgeInsets.only(bottom: screenHeight * 0.62),
             decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/images/logo.png'),scale: 1.2)),
+              image: DecorationImage(
+                  image: AssetImage('assets/images/logo.png'), scale: 1.2),
+            ),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -93,7 +97,9 @@ class _LoginPageState extends State<LoginPage> {
               ),
               CustomButton(
                 text: 'LOGIN WITH OTP',
-                onPressed: () {},
+                onPressed: () {
+                  Get.offAndToNamed('/otp');
+                },
                 color: AppColors.constColor,
                 textStyle: FontConstant.styleRegular(
                     fontSize: 18, color: AppColors.primaryColor),
@@ -103,7 +109,9 @@ class _LoginPageState extends State<LoginPage> {
               ),
               CustomButton(
                 text: 'LOGIN WITH EMAIL ID',
-                onPressed: () {},
+                onPressed: () {
+                  Get.offAndToNamed('/otp');
+                },
                 color: AppColors.constColor,
                 textStyle: FontConstant.styleRegular(
                     fontSize: 18, color: AppColors.primaryColor),
