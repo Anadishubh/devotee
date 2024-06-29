@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(bottom: screenHeight * 0.59),
+            margin: EdgeInsets.only(bottom: screenHeight * 0.6,left: screenWidth*0.1),
             decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage('assets/images/bg1.png'),
@@ -100,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: CustomButton(
                   text: 'LOGIN WITH OTP',
                   onPressed: () {
-                    Get.offAndToNamed('/otp');
+                    Get.offAndToNamed('/mobile');
                   },
                   color: AppColors.constColor,
                   textStyle: FontConstant.styleRegular(
@@ -115,7 +115,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: CustomButton(
                   text: 'LOGIN WITH EMAIL ID',
                   onPressed: () {
-                    Get.offAndToNamed('/otp');
+                    Get.offAndToNamed('/mobile');
                   },
                   color: AppColors.constColor,
                   textStyle: FontConstant.styleRegular(

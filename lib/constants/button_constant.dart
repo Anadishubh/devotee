@@ -20,7 +20,7 @@ class CustomBasicButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: color,
         borderRadius: BorderRadius.circular(20),
       ),
       child: InkWell(
@@ -56,18 +56,18 @@ class CustomSmallButton extends StatelessWidget {
   final Color color;
   final TextStyle textStyle;
 
-  const CustomSmallButton({
-    super.key,
-    required this.text,
-    required this.onPressed,
-    required this.color,
-    required this.textStyle
-  });
+  const CustomSmallButton(
+      {super.key,
+      required this.text,
+      required this.onPressed,
+      required this.color,
+      required this.textStyle});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        color: color,
         border: Border.all(width: 2, color: Colors.white),
         borderRadius: BorderRadius.circular(20),
       ),
@@ -79,7 +79,7 @@ class CustomSmallButton extends StatelessWidget {
           children: [
             Padding(
               padding:
-              const EdgeInsets.symmetric(horizontal: 20.0, vertical: 2),
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 2),
               child: Text(
                 text,
                 style: textStyle,
@@ -113,7 +113,8 @@ class CustomShadowButton extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(25),
+          color: color,
+          borderRadius: BorderRadius.circular(20),
           boxShadow: const [
             BoxShadow(
                 color: Colors.grey,
@@ -123,7 +124,7 @@ class CustomShadowButton extends StatelessWidget {
           ]),
       child: InkWell(
         splashColor: Colors.grey.shade100,
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(20),
         onTap: onPressed,
         child: Padding(
           padding: const EdgeInsets.all(10.0),
@@ -167,12 +168,12 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
+        color: color,
+        borderRadius: BorderRadius.circular(20),
       ),
       child: InkWell(
         splashColor: Colors.grey.shade400,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(20),
         onTap: onPressed,
         child: Padding(
           padding: const EdgeInsets.all(10.0),
