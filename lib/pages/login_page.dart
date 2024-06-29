@@ -95,26 +95,32 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(
                 height: 30,
               ),
-              CustomButton(
-                text: 'LOGIN WITH OTP',
-                onPressed: () {
-                  Get.offAndToNamed('/otp');
-                },
-                color: AppColors.constColor,
-                textStyle: FontConstant.styleRegular(
-                    fontSize: 18, color: AppColors.primaryColor),
+              Padding(
+                padding: const EdgeInsets.only(left: 18.0, right: 18),
+                child: CustomButton(
+                  text: 'LOGIN WITH OTP',
+                  onPressed: () {
+                    Get.offAndToNamed('/otp');
+                  },
+                  color: AppColors.constColor,
+                  textStyle: FontConstant.styleRegular(
+                      fontSize: 18, color: AppColors.primaryColor),
+                ),
               ),
               const SizedBox(
                 height: 15,
               ),
-              CustomButton(
-                text: 'LOGIN WITH EMAIL ID',
-                onPressed: () {
-                  Get.offAndToNamed('/otp');
-                },
-                color: AppColors.constColor,
-                textStyle: FontConstant.styleRegular(
-                    fontSize: 18, color: AppColors.primaryColor),
+              Padding(
+                padding: const EdgeInsets.only(left: 18.0, right: 18),
+                child: CustomButton(
+                  text: 'LOGIN WITH EMAIL ID',
+                  onPressed: () {
+                    Get.offAndToNamed('/otp');
+                  },
+                  color: AppColors.constColor,
+                  textStyle: FontConstant.styleRegular(
+                      fontSize: 18, color: AppColors.primaryColor),
+                ),
               ),
               const SizedBox(
                 height: 80,
