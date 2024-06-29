@@ -12,12 +12,15 @@ class Otp extends StatefulWidget {
 }
 
 class _OtpState extends State<Otp> {
-  // Controller to handle the OTP input
   final TextEditingController _otpController = TextEditingController();
+  final List<TextEditingController> _otpControllers = List.generate(4, (index) => TextEditingController());
 
   @override
   void dispose() {
     _otpController.dispose();
+    for (var controller in _otpControllers) {
+      controller.dispose();
+    }
     super.dispose();
   }
 
@@ -72,12 +75,7 @@ class _OtpState extends State<Otp> {
               const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _buildOtpTextField(1),
-                  _buildOtpTextField(2),
-                  _buildOtpTextField(3),
-                  _buildOtpTextField(4),
-                ],
+                children: List.generate(4, (index) => _buildOtpTextField(index)),
               ),
               const SizedBox(
                 height: 10,
@@ -135,14 +133,13 @@ class _OtpState extends State<Otp> {
       ),
     );
   }
-  Widget _buildOtpTextField(int position) {
+
+  Widget _buildOtpTextField(int index) {
     return SizedBox(
       width: 60,
       height: 60,
       child: TextFormField(
-        controller: position == 1
-            ? _otpController
-            : TextEditingController(),
+        controller: _otpControllers[index],
         textAlign: TextAlign.center,
         keyboardType: TextInputType.number,
         maxLength: 1,
@@ -157,8 +154,10 @@ class _OtpState extends State<Otp> {
           ),
         ),
         onChanged: (value) {
-          if (value.length == 1 && position < 4) {
+          if (value.length == 1 && index < 3) {
             FocusScope.of(context).nextFocus();
+          } else if (value.isEmpty && index > 0) {
+            FocusScope.of(context).previousFocus();
           }
         },
       ),
