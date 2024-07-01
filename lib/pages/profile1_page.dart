@@ -29,20 +29,24 @@ class _Profile1PageState extends State<Profile1Page> {
           "Let's Build Your Profile",
           style: FontConstant.styleMedium(fontSize: 20, color: Colors.white),
         ),
+        leading: IconButton(
+          icon: Image.asset('assets/images/icons/arrow.png'),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: SingleChildScrollView(
         child: Stack(
           children: [
+            Padding(
+              padding: EdgeInsets.only(left: screenWidth * 0.2),
+              child: const Image(image: AssetImage('assets/images/bg3.png')),
+            ),
             Container(
-              height: screenHeight, // Adjust the height as per your content
+              height: screenHeight,
               padding:
                   const EdgeInsets.symmetric(horizontal: 18.0, vertical: 18),
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/bg3.png'),
-                  fit: BoxFit.none,
-                ),
-              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -54,7 +58,7 @@ class _Profile1PageState extends State<Profile1Page> {
                   const SizedBox(height: 10),
                   Expanded(
                     child: GridView.builder(
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const NeverScrollableScrollPhysics(),
                       scrollDirection: Axis.vertical,
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
@@ -180,7 +184,8 @@ class _Profile1PageState extends State<Profile1Page> {
             Get.toNamed('/profile2');
           },
           color: AppColors.primaryColor,
-          textStyle: FontConstant.styleRegular(fontSize: 18, color: Colors.white),
+          textStyle:
+              FontConstant.styleRegular(fontSize: 18, color: Colors.white),
         ),
       ),
     );

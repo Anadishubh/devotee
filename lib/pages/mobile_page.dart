@@ -2,7 +2,6 @@ import 'package:devotee_matrimony/constants/button_constant.dart';
 import 'package:devotee_matrimony/constants/color_constant.dart';
 import 'package:devotee_matrimony/constants/font_constant.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class MobilePage extends StatefulWidget {
   const MobilePage({super.key});
@@ -78,7 +77,8 @@ class _MobilePageState extends State<MobilePage> {
                 child: CustomButton(
                   text: 'SEND OTP',
                   onPressed: () {
-                    Get.toNamed('/otp');
+                    Navigator.pushNamed(context, '/otp');
+                    // Get.toNamed('/otp');
                   },
                   color: AppColors.primaryColor,
                   textStyle: FontConstant.styleRegular(
@@ -86,6 +86,30 @@ class _MobilePageState extends State<MobilePage> {
                 ),
               ),
             ],
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 13.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "You Don't have any account?",
+                    style: FontConstant.styleRegular(
+                        fontSize: 14, color: Colors.grey.shade600),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'SignUp',
+                      style: FontConstant.styleRegular(
+                          fontSize: 14, color: AppColors.primaryColor),
+                    ),
+                  )
+                ],
+              ),
+            ),
           ),
         ],
       ),

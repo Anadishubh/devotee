@@ -5,6 +5,7 @@ import 'package:devotee_matrimony/pages/mobile_page.dart';
 import 'package:devotee_matrimony/pages/otp_page.dart';
 import 'package:devotee_matrimony/pages/profile1_page.dart';
 import 'package:devotee_matrimony/pages/profile2_page.dart';
+import 'package:devotee_matrimony/pages/search_page.dart';
 import 'package:get/get.dart';
 import '../pages/splash_screen.dart';
 
@@ -17,7 +18,7 @@ class AppRoutes {
   static const String profile2 = '/profile2';
   static const String education = '/education';
   static const String family = '/family';
-  // static const String martial = '/martial';
+  static const String search = '/search';
   // static const String qualification = '/qualification';
   // static const String income = '/income';
 
@@ -25,6 +26,8 @@ class AppRoutes {
     GetPage(
       name: splash,
       page: () => const SplashScreen(),
+      transition: Transition.fadeIn,
+      transitionDuration: const Duration(milliseconds: 400),
     ),
     GetPage(
       name: login,
@@ -65,6 +68,12 @@ class AppRoutes {
     GetPage(
       name: family,
       page: () => const FamilyPage(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 400),
+    ),
+    GetPage(
+      name: search,
+      page: () => const SearchPage(),
       transition: Transition.rightToLeft,
       transitionDuration: const Duration(milliseconds: 400),
     ),

@@ -25,6 +25,12 @@ class _FamilyPageState extends State<FamilyPage> {
           "Family Details",
           style: FontConstant.styleMedium(fontSize: 19, color: Colors.white),
         ),
+        leading: IconButton(
+          icon: Image.asset('assets/images/icons/arrow.png'),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: Stack(
         children: [
@@ -89,6 +95,7 @@ class _FamilyPageState extends State<FamilyPage> {
                   CustomButton(
                     text: 'CONTINUE',
                     onPressed: () {
+                      Get.toNamed('/search');
                     },
                     color: AppColors.primaryColor,
                     textStyle: FontConstant.styleMedium(

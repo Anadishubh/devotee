@@ -25,6 +25,12 @@ class _Profile2State extends State<Profile2> {
           "Let's Build Your Profile",
           style: FontConstant.styleMedium(fontSize: 19, color: Colors.white),
         ),
+        leading: IconButton(
+          icon: Image.asset('assets/images/icons/arrow.png'),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: Stack(
         children: [

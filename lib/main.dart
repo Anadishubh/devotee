@@ -1,3 +1,4 @@
+import 'package:devotee_matrimony/pages/search_page.dart';
 import 'package:devotee_matrimony/pages/splash_screen.dart';
 import 'package:devotee_matrimony/routes/app_routes.dart';
 import 'package:flutter/material.dart';

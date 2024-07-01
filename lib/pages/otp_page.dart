@@ -37,6 +37,12 @@ class _OtpState extends State<Otp> {
           'Verify',
           style: FontConstant.styleSemiBold(fontSize: 18, color: Colors.white),
         ),
+        leading: IconButton(
+          icon: Image.asset('assets/images/icons/arrow.png'),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: Stack(
         children: [
@@ -118,7 +124,7 @@ class _OtpState extends State<Otp> {
                 child: CustomButton(
                   text: 'VERIFY',
                   onPressed: () {
-                    Get.toNamed('/profile1');
+                    Get.offAndToNamed('/profile1');
                   },
                   color: AppColors.primaryColor,
                   textStyle: FontConstant.styleRegular(
