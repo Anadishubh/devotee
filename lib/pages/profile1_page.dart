@@ -53,10 +53,11 @@ class _Profile1PageState extends State<Profile1Page> {
                   Text(
                     'This Profile is for',
                     style: FontConstant.styleMedium(
-                        fontSize: 18, color: Colors.black),
+                        fontSize: 16, color: Colors.black),
                   ),
                   const SizedBox(height: 10),
-                  Expanded(
+                  SizedBox(
+                    height: 400,
                     child: GridView.builder(
                       physics: const NeverScrollableScrollPhysics(),
                       scrollDirection: Axis.vertical,
@@ -115,8 +116,9 @@ class _Profile1PageState extends State<Profile1Page> {
                     style: FontConstant.styleMedium(
                         fontSize: 18, color: Colors.black),
                   ),
+                  SizedBox(height: 10,),
                   SizedBox(
-                    height: 325,
+                    height: 100,
                     child: GridView.builder(
                       physics: const NeverScrollableScrollPhysics(),
                       scrollDirection: Axis.vertical,
@@ -170,22 +172,22 @@ class _Profile1PageState extends State<Profile1Page> {
                       },
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 18,right: 18,top: 20),
+                    child: CustomButton(
+                      text: 'CONTINUE',
+                      onPressed: () {
+                        Get.toNamed('/profile2');
+                      },
+                      color: AppColors.primaryColor,
+                      textStyle:
+                      FontConstant.styleRegular(fontSize: 18, color: Colors.white),
+                    ),
+                  ),
                 ],
               ),
             ),
           ],
-        ),
-      ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(30.0),
-        child: CustomButton(
-          text: 'CONTINUE',
-          onPressed: () {
-            Get.toNamed('/profile2');
-          },
-          color: AppColors.primaryColor,
-          textStyle:
-              FontConstant.styleRegular(fontSize: 18, color: Colors.white),
         ),
       ),
     );

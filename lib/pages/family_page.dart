@@ -32,29 +32,27 @@ class _FamilyPageState extends State<FamilyPage> {
           },
         ),
       ),
-      body: Stack(
-        children: [
-          Container(
-            margin: EdgeInsets.only(
-                bottom: screenHeight * 0.5, left: screenWidth * 0.2),
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/bg3.png'),
-                fit: BoxFit.none,
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            Container(
+              height: screenHeight*0.4,
+              width: screenWidth,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/bg3.png'),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          ),
-          Container(
-            margin: EdgeInsets.only(bottom: screenHeight * 0.65),
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/family.png'),
-              ),
+            Positioned(
+              top: 20,
+              left: screenWidth * 0.25,
+              right: screenWidth * 0.25,
+              child: Image.asset('assets/images/family.png'),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 18.0, right: 18, top: 160),
-            child: SingleChildScrollView(
+            Padding(
+              padding: const EdgeInsets.only(left: 18.0, right: 18, top: 160),
               child: Column(
                 children: [
                   const SizedBox(height: 20),
@@ -91,15 +89,18 @@ class _FamilyPageState extends State<FamilyPage> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20),
-                  CustomButton(
-                    text: 'CONTINUE',
-                    onPressed: () {
-                      Get.toNamed('/search');
-                    },
-                    color: AppColors.primaryColor,
-                    textStyle: FontConstant.styleMedium(
-                        fontSize: 18, color: Colors.white),
+                  const SizedBox(height: 30),
+                  SizedBox(
+                    height: 44,
+                    child: CustomButton(
+                      text: 'CONTINUE',
+                      onPressed: () {
+                        Get.toNamed('/search');
+                      },
+                      color: AppColors.primaryColor,
+                      textStyle: FontConstant.styleMedium(
+                          fontSize: 18, color: Colors.white),
+                    ),
                   ),
                   const SizedBox(
                     height: 40,
@@ -107,8 +108,8 @@ class _FamilyPageState extends State<FamilyPage> {
                 ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -119,19 +120,22 @@ class _FamilyPageState extends State<FamilyPage> {
       children: [
         Text(
           labelText,
-          style: FontConstant.styleMedium(fontSize: 16, color: Colors.black),
+          style: FontConstant.styleMedium(fontSize: 14, color: Colors.black),
         ),
         const SizedBox(height: 8),
-        TextFormField(
-          decoration: InputDecoration(
-            filled: true,
-            fillColor: Colors.white,
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5),
-              borderSide: const BorderSide(color: AppColors.primaryColor),
-            ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5),
+        SizedBox(
+          height: 45,
+          child: TextFormField(
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.white,
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(5),
+                borderSide: const BorderSide(color: AppColors.primaryColor),
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(5),
+              ),
             ),
           ),
         ),

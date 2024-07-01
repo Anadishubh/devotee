@@ -44,98 +44,105 @@ class _OtpState extends State<Otp> {
           },
         ),
       ),
-      body: Stack(
-        children: [
-          Container(
-            margin: EdgeInsets.only(
-              bottom: screenHeight * 0.49,
-              left: screenWidth * 0.17,
-            ),
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/bg3.png'),
-                fit: BoxFit.none,
-              ),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(bottom: screenWidth * 1.15),
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/otp.png'),
-              ),
-            ),
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Center(
-                child: Text(
-                  'Code is sent to +91 *******876',
-                  style: FontConstant.styleMedium(
-                    fontSize: 18,
-                    color: Colors.black,
-                  ),
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            Container(
+              height: screenHeight * 0.4,
+              width: screenWidth,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/bg3.png'),
+                  fit: BoxFit.cover,
                 ),
               ),
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: List.generate(4, (index) => _buildOtpTextField(index)),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
+            ),
+            Positioned(
+              top: 70,
+              left: screenWidth * 0.4,
+              right: screenWidth * 0.4,
+              child: Image.asset('assets/images/otp.png'),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 220.0),
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Center(
+                    child: Text(
+                      'Code is sent to +91 *******876',
+                      style: FontConstant.styleMedium(
+                        fontSize: 16,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  SizedBox(
+                    height: 60,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: List.generate(4, (index) => _buildOtpTextField(index)),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Didn't receive OTP?",
+                        style: FontConstant.styleRegular(
+                          fontSize: 14,
+                          color: Colors.grey.shade600,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "Send Again",
+                        style: FontConstant.styleRegular(
+                          fontSize: 13,
+                          color: AppColors.primaryColor,
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   Text(
-                    "Didn't receive OTP?",
+                    'Resend in 00:15',
                     style: FontConstant.styleRegular(
                       fontSize: 14,
                       color: Colors.grey.shade600,
                     ),
                   ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    "Send Again",
-                    style: FontConstant.styleRegular(
-                      fontSize: 13,
-                      color: AppColors.primaryColor,
+                  const SizedBox(height: 20),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: SizedBox(
+                      height: 45,
+                      child: CustomButton(
+                        text: 'VERIFY',
+                        onPressed: () {
+                          Get.toNamed('/profile1');
+                        },
+                        color: AppColors.primaryColor,
+                        textStyle: FontConstant.styleRegular(
+                          fontSize: 18,
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
-                  )
+                  ),
                 ],
               ),
-              const SizedBox(
-                height: 10,
-              ),
-              Text(
-                'Resend in 00:15',
-                style: FontConstant.styleRegular(
-                  fontSize: 14,
-                  color: Colors.grey.shade600,
-                ),
-              ),
-              const SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.only(left: 20, right: 20),
-                child: CustomButton(
-                  text: 'VERIFY',
-                  onPressed: () {
-                    Get.offAndToNamed('/profile1');
-                  },
-                  color: AppColors.primaryColor,
-                  textStyle: FontConstant.styleRegular(
-                    fontSize: 18,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }
